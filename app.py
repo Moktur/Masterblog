@@ -26,13 +26,15 @@ def update(post_id):
     if post_to_update is None:
         return "Post not found", 404
     if request.method == 'POST':
-        post_to_update['title'] = request.form['blogtitle']
         post_to_update['author'] = request.form['author']
+        post_to_update['title'] = request.form['title']
+        
         post_to_update['content'] = request.form['content']
+        data_processer.delete_post_by_id(post_id)
         data_processer.save_json(post_to_update)
         return redirect(url_for('index'))
     else:
-        return render_template('update.html',post=post)
+        return render_template('update.html',post=post_to_update)
 
 
 @app.route('/delete/<post_id>', methods= ['POST'])
@@ -49,7 +51,7 @@ def delete_post(post_id):
 @app.route('/add', methods=['GET','POST'])
 def add():
     if request.method == 'POST':
-        title = request.form['blogtitle']
+        title = request.form['title']
         author = request.form['author']
         content = request.form['content']
         id = highest_blog_id()

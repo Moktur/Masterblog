@@ -17,8 +17,20 @@ def save_json(data):
 
 
 def fetch_post_by_id(post_id):
+    posts = read_json()
+    for post in posts:
+        if post['id'] == int(post_id):
+            return post
+    return None
+
+
+def delete_post_by_id(post_id):
     list_of_posts = read_json()
     for post in list_of_posts:
         if post['id'] == int(post_id):
-            print(f"DEBUG TEST IF DICT: {post}")
-            return post
+            print(f"{post} Datensatz wird gelöscht!")
+            list_of_posts.remove(post)
+            print("Löschung erfolgt")
+    save_json(list_of_posts)
+
+
