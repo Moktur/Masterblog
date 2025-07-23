@@ -20,6 +20,21 @@ def index():
     return render_template('index.html', posts=data_processer.read_json())
 
 
+@app.route('/update/<post_id>', methods=['GET','POST'])
+def update(post_id):
+    post_to_update = data_processer.fetch_post_by_id(post_id)
+    if post_to_update is None:
+        return "Post not found", 404
+    if request.method == 'POST':
+        post_to_update['title'] = request.form['blogtitle']
+        post_to_update['author'] = request.form['author']
+        post_to_update['content'] = request.form['content']
+        data_processer.save_json(post_to_update)
+        return redirect(url_for('index'))
+    else:
+        return render_template('update.html',post=post)
+
+
 @app.route('/delete/<post_id>', methods= ['POST'])
 def delete_post(post_id):
     list_of_posts = data_processer.read_json()

@@ -15,3 +15,10 @@ def save_json(data):
     with open("blogdata.json", "w", encoding="utf-8") as fileobj:
         json.dump(data, fileobj, indent=2)
 
+
+def fetch_post_by_id(post_id):
+    list_of_posts = read_json()
+    for post in list_of_posts:
+        if post['id'] == int(post_id):
+            print(f"DEBUG TEST IF DICT: {post}")
+            return post

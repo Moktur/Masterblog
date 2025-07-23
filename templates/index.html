@@ -20,6 +20,9 @@
         <form method="POST" action="/delete/{{post['id']}}">
             <input type="submit" value="Delete">
         </form>
+        <form method="POST" action="/update/{{post['id']}}">
+            <input type="submit" value="Update">
+        </form>
     </div>
     {% endfor %}
 
