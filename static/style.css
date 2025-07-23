@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F5F5F5;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #4F4F4F;
+}
+
+.post {
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.post h2 {
+    margin-top: 0;
+}
+
+.post p {
+    margin: 10px 0;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Spezifische Größen: */
+/* Author-Feld (kleiner) */
+form input#author {
+    height: 35px;
+    font-size: 14px;
+}
+
+
+/* Title-Feld (mittel) */
+form input#title {
+    height: 40px;
+    /* Etwas größer als Author */
+    font-size: 16px;
+}
+
+
+/* Content-Feld (wesentlich größer) */
+form textarea#content {
+    height: 200px;
+    /* Groß für längeren Text */
+    font-size: 16px;
+    resize: vertical;
+    /* Erlaubt vertikales Vergrößern */
+}
+
+
+/* Submit-Button */
+form input[type="submit"] {
+    background: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+form input[type="submit"]:hover {
+    background: #45a049;
+}
