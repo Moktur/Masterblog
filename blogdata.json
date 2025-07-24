@@ -1,20 +1,26 @@
 [
-    {
-        "id": 2,
-        "author": "Jane Doe",
-        "title": "Second Post",
-        "content": "This is another post."
-    },
-    {
-        "id": 3,
-        "author": "pikachu",
-        "title": "pika pika",
-        "content": "Pika-Pika! Chu, Pikachu! Pika-Pika-CHUUU! Chu-Pi, Pika! Pikachu-chu! Pikaaa\u2026 Pika-Pika! Chu-chu!"
-    },
-    {
-        "id": 4,
-        "author": "Bisasam",
-        "title": "Bisa!",
-        "content": "Bisa-Sam, Bisasam! Saaam, Bisa-Bisa! Sam-Sam! Bisa\u2026 Saaaaam!"
-    }
+  {
+    "id": 5,
+    "author": "Homer Simpson",
+    "title": "Doh!",
+    "content": "Marge, it takes two to lie: one to lie and one to listen."
+  },
+  {
+    "id": 4,
+    "author": "Pikachu",
+    "title": "Pika pika",
+    "content": "Pika-Pika! Chu, Pikachu! Pika-Pika-CHUUU! Chu-Pi, Pika! Pikachu-chu! Pikaaa\u2026 Pika-Pika! Chu-chu!Pika-Pika! Chu, Pikachu! Pika-Pika-CHUUU! Chu-Pi, Pika! Pikachu-chu! Pikaaa\u2026 Pika-Pika! Chu-chu!Pika-Pika! Chu, Pikachu! Pika-Pika-CHUUU! Chu-Pi, Pika! Pikachu-chu! Pikaaa\u2026 Pika-Pika! Chu-\u00f6klchu!"
+  },
+  {
+    "id": 3,
+    "author": "Julius Ceasar",
+    "title": "Divide et impera",
+    "content": " \u201eWir haben weder ewige Verb\u00fcndete noch ewige Feinde. Wir haben nur dauerhafte Interessen.\u201c\r\n\r\nQuelle: https://beruhmte-zitate.de/autoren/gaius-julius-caesar/\r\n\r\n..."
+  },
+  {
+    "id": 6,
+    "author": "dsflksajflk",
+    "title": "sadfaslfj",
+    "content": "dsalkfjas\u00f6lf"
+  }
 ]

@@ -1,12 +1,13 @@
 from flask import Flask, render_template, request, redirect, url_for
 import data_processer
 
+
 app = Flask(__name__)
 
 
 def highest_blog_id():
     """
-    calculates the highest id for al blogposts,
+    helper method: calculates the highest id for al blogposts,
     returns the most highest id number increased by 1 for the new blog post to save
     """
     id = 0
@@ -15,20 +16,23 @@ def highest_blog_id():
             id = post['id']
     return id + 1
 
+
 @app.route('/')
 def index():
+    """main website"""
     return render_template('index.html', posts=data_processer.read_json())
 
 
 @app.route('/update/<post_id>', methods=['GET','POST'])
 def update(post_id):
+    """update a blog post"""
     post_to_update = data_processer.fetch_post_by_id(post_id)
     if post_to_update is None:
         return "Post not found", 404
-    if request.method == 'POST':
-        post_to_update['author'] = request.form['author']
-        post_to_update['title'] = request.form['title']
         
+    if request.method == 'POST':
+        post_to_update['title'] = request.form['title']
+        post_to_update['author'] = request.form['author']
         post_to_update['content'] = request.form['content']
         data_processer.delete_post_by_id(post_id)
         data_processer.save_json(post_to_update)
@@ -39,6 +43,7 @@ def update(post_id):
 
 @app.route('/delete/<post_id>', methods= ['POST'])
 def delete_post(post_id):
+    """deleting a blog post"""
     list_of_posts = data_processer.read_json()
 
     for post in list_of_posts:
@@ -50,6 +55,7 @@ def delete_post(post_id):
 
 @app.route('/add', methods=['GET','POST'])
 def add():
+    """adding a new blog post"""
     if request.method == 'POST':
         title = request.form['title']
         author = request.form['author']
