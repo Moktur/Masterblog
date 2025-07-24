@@ -6,11 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Flask Blog</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        @font-face {
+            font-family: 'MS Sans Serif';
+            src: url('ms-sans-serif.ttf') format('truetype');
+        }
+    </style>
 </head>
 
 <body>
     <h1>Welcome to My Flask Blog!</h1>
-    <button onclick="location.href='/add'">Artikel hinzufügen</button>
+    <button onclick="location.href='/add'" class="amiga-button">Artikel hinzufügen</button>
     {% for post in posts %}
     <div class="post">
         <h2>{{post['title']}}</h2>
